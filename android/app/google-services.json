@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1066535405957",
+    "project_id": "mirror-business",
+    "storage_bucket": "mirror-business.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066535405957:android:993316b51607f3b76c5cec",
+        "android_client_info": {
+          "package_name": "com.defender.business"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066535405957-cb06ut63dqpbdjmb5k34jsico6eghgk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhIgYuRoeMUdpk8Y2Qlpm_MsDbiyGHuec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066535405957-cb06ut63dqpbdjmb5k34jsico6eghgk1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1066535405957-i7k4pmrm1nlierv9egprfjoeo72rrn6e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.defender.business"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

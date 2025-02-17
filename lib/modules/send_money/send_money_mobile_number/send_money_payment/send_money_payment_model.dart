@@ -1,0 +1,3 @@
+class SendMoneyPaymentModel{
+  SendMoneyPaymentModel();
+}

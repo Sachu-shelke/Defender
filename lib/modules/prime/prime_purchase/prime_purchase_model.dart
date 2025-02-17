@@ -1,0 +1,3 @@
+class PrimePurchaseModel {
+  PrimePurchaseModel();
+}
