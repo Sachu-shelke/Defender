@@ -17,6 +17,8 @@ import 'package:defenders/modules/auth/mpin/mpin_screen_view.dart';
 import 'package:defenders/widget/logo.dart';
 import 'package:local_auth/local_auth.dart';
 
+import '../../subscription/subsciption_screen.dart';
+
 @RoutePage()
 class PinCodeOtp extends StatefulWidget {
   final bool isSignup;
@@ -304,9 +306,10 @@ class _PinCodeOtpState extends State<PinCodeOtp>
           if (authenticated) {
             CommonMethod().getUserLog(action: 'Business_login', id: 7);
             // For main Screen code
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SubscriptionScreen()));
 
-            context.router
-                .push(MainHomeScreenRoute(isFromSignup: widget.isSignup));
+            // context.router
+            //     .push(MainHomeScreenRoute(isFromSignup: widget.isSignup));
             // context.router.pushAndPopUntil(
             //     MainRoute(isRegister: widget.isSignup),
             //     predicate: (route) => false);
@@ -421,7 +424,10 @@ class _PinCodeOtpState extends State<PinCodeOtp>
             model.secondDigit.toString() +
             model.thirdDigit.toString() +
             model.fourthDigit.toString();
-        appRouter.push(MainHomeScreenRoute());
+        // appRouter.push(MainHomeScreenRoute());
+        Navigator.push(context, MaterialPageRoute(builder: (context) => SubscriptionScreen()));
+
+
         // presenter.getMpinApi(
         //     mpin: otp,
         //     crn: context,

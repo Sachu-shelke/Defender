@@ -1,4 +1,4 @@
-import 'package:contacts_service/contacts_service.dart';
+// import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -17,7 +17,7 @@ class MyContactScreen extends StatefulWidget {
 
 class _MyContactScreenState extends State<MyContactScreen> {
   // List contactMobileNumberList = [];
-  List<List<Contact>> parts = [];
+  // List<List<Contact>> parts = [];
 
   int selectedListIndex = 0;
   // ScrollController _controller = ScrollController();
@@ -52,18 +52,18 @@ class _MyContactScreenState extends State<MyContactScreen> {
     int numberOfParts = 250;
 
     // Calculate the length of each part
-    int partLength = (GlobalSingleton.contact.length / numberOfParts).ceil();
+    // int partLength = (GlobalSingleton.contact.length / numberOfParts).ceil();
 
     // Split the list into parts
-    for (int i = 0; i < partLength; i++) {
-      int start = i * numberOfParts;
-      int end = (i + 1) * numberOfParts;
-      parts.add(GlobalSingleton.contact.sublist(
-          start,
-          end > GlobalSingleton.contact.length
-              ? GlobalSingleton.contact.length
-              : end));
-    }
+    // for (int i = 0; i < partLength; i++) {
+    //   int start = i * numberOfParts;
+    //   int end = (i + 1) * numberOfParts;
+    //   parts.add(GlobalSingleton.contact.sublist(
+    //       start,
+    //       end > GlobalSingleton.contact.length
+    //           ? GlobalSingleton.contact.length
+    //           : end));
+    // }
   }
 
   @override
@@ -78,19 +78,19 @@ class _MyContactScreenState extends State<MyContactScreen> {
               onTap: () async {
                 String contacts = '';
 
-                for (var i = 0; i < parts[selectedListIndex].length; i++) {
-                  if ((parts[selectedListIndex][i].phones != null &&
-                      parts[selectedListIndex][i].phones!.isNotEmpty &&
-                      parts[selectedListIndex][i]
-                              .phones![0]
-                              .value
-                              .toString()
-                              .length >
-                          10)) {
-                    contacts +=
-                        ("91${parts[selectedListIndex][i].phones![0].value.toString().replaceAll(" ", "").replaceFirst("+91", "").replaceFirst("+", "")}\n");
-                  }
-                }
+                // for (var i = 0; i < parts[selectedListIndex].length; i++) {
+                //   if ((parts[selectedListIndex][i].phones != null &&
+                //       parts[selectedListIndex][i].phones!.isNotEmpty &&
+                //       parts[selectedListIndex][i]
+                //               .phones![0]
+                //               .value
+                //               .toString()
+                //               .length >
+                //           10)) {
+                //     contacts +=
+                //         ("91${parts[selectedListIndex][i].phones![0].value.toString().replaceAll(" ", "").replaceFirst("+91", "").replaceFirst("+", "")}\n");
+                //   }
+                // }
                 await Clipboard.setData(ClipboardData(text: contacts));
                 Fluttertoast.showToast(msg: "contacts copied to clipboard");
               },
@@ -101,103 +101,103 @@ class _MyContactScreenState extends State<MyContactScreen> {
       ),
       body: Column(
         children: [
-          SizedBox(
-            height: 60,
-            child: ListView.builder(
-                itemCount: parts.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {
-                      selectedListIndex = index;
-                      setState(() {});
-                    },
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 5),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: selectedListIndex != index
-                              ? AppColors.appColors
-                              : Colors.transparent,
-                        ),
-                        color: selectedListIndex == index
-                            ? AppColors.appColors
-                            : null,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Text(
-                        "Conatct List ${index + 1}",
-                        style: AppTextStyle.semiBold16.copyWith(
-                            color: selectedListIndex != index
-                                ? AppColors.appColors
-                                : AppColors.whiteColor),
-                      ),
-                    ),
-                  );
-                }),
-          ),
-          if (parts.isNotEmpty)
-            Expanded(
-              child: ListView.builder(
-                  itemCount: parts[selectedListIndex].length,
-                  itemBuilder: (context, index) {
-                    // if ((parts[selectedListIndex].phones != null &&
-                    //     parts[selectedListIndex].phones!.isNotEmpty &&
-                    //     parts[selectedListIndex]
-                    //             .phones![0]
-                    //             .value
-                    //             .toString()
-                    //             .length >
-                    //         10)) {
-                    //   if (!contactMobileNumberList.contains(GlobalSingleton
-                    //       .contact[index].phones![0].value
-                    //       .toString()
-                    //       .replaceAll(" ", "")
-                    //       .replaceFirst("+", ""))) {
-                    //     contactMobileNumberList
-                    //         .add(parts[selectedListIndex].phones![0].value);
-                    //   }
-                    // }
-
-                    return (parts[selectedListIndex][index].phones != null &&
-                            parts[selectedListIndex][index]
-                                .phones!
-                                .isNotEmpty &&
-                            parts[selectedListIndex][index]
-                                    .phones![0]
-                                    .value
-                                    .toString()
-                                    .length >
-                                10)
-                        ? ListTile(
-                            title: Text(parts[selectedListIndex][index]
-                                .displayName
-                                .toString()),
-                            subtitle: Text(parts[selectedListIndex][index]
-                                .phones![0]
-                                .value
-                                .toString()
-                                .replaceAll(" ", "")
-                                .replaceFirst("+91", "")
-                                .replaceFirst("+", "")),
-                            // trailing: InkWell(
-                            //   onTap: () async {
-                            //     String sss = GlobalSingleton
-                            //         .contact[index].phones![0].value
-                            //         .toString()
-                            //         .replaceAll(" ", "")
-                            //         .replaceFirst("+", "");
-                            //     await Clipboard.setData(ClipboardData(text: sss));
-                            //   },
-                            //   child: const Icon(Icons.copy),
-                            // ),
-                          )
-                        : const SizedBox();
-                  }),
-            ),
+          // SizedBox(
+          //   height: 60,
+          //   child: ListView.builder(
+          //       itemCount: parts.length,
+          //       scrollDirection: Axis.horizontal,
+          //       itemBuilder: (context, index) {
+          //         return InkWell(
+          //           onTap: () {
+          //             selectedListIndex = index;
+          //             setState(() {});
+          //           },
+          //           child: Container(
+          //             margin: const EdgeInsets.symmetric(
+          //                 horizontal: 10, vertical: 10),
+          //             padding: const EdgeInsets.symmetric(
+          //                 horizontal: 20, vertical: 5),
+          //             decoration: BoxDecoration(
+          //               border: Border.all(
+          //                 color: selectedListIndex != index
+          //                     ? AppColors.appColors
+          //                     : Colors.transparent,
+          //               ),
+          //               color: selectedListIndex == index
+          //                   ? AppColors.appColors
+          //                   : null,
+          //               borderRadius: BorderRadius.circular(10),
+          //             ),
+          //             child: Text(
+          //               "Conatct List ${index + 1}",
+          //               style: AppTextStyle.semiBold16.copyWith(
+          //                   color: selectedListIndex != index
+          //                       ? AppColors.appColors
+          //                       : AppColors.whiteColor),
+          //             ),
+          //           ),
+          //         );
+          //       }),
+          // ),
+          // if (parts.isNotEmpty)
+          //   Expanded(
+          //     child: ListView.builder(
+          //         itemCount: parts[selectedListIndex].length,
+          //         itemBuilder: (context, index) {
+          //           // if ((parts[selectedListIndex].phones != null &&
+          //           //     parts[selectedListIndex].phones!.isNotEmpty &&
+          //           //     parts[selectedListIndex]
+          //           //             .phones![0]
+          //           //             .value
+          //           //             .toString()
+          //           //             .length >
+          //           //         10)) {
+          //           //   if (!contactMobileNumberList.contains(GlobalSingleton
+          //           //       .contact[index].phones![0].value
+          //           //       .toString()
+          //           //       .replaceAll(" ", "")
+          //           //       .replaceFirst("+", ""))) {
+          //           //     contactMobileNumberList
+          //           //         .add(parts[selectedListIndex].phones![0].value);
+          //           //   }
+          //           // }
+          //
+          //           return (parts[selectedListIndex][index].phones != null &&
+          //                   parts[selectedListIndex][index]
+          //                       .phones!
+          //                       .isNotEmpty &&
+          //                   parts[selectedListIndex][index]
+          //                           .phones![0]
+          //                           .value
+          //                           .toString()
+          //                           .length >
+          //                       10)
+          //               ? ListTile(
+          //                   title: Text(parts[selectedListIndex][index]
+          //                       .displayName
+          //                       .toString()),
+          //                   subtitle: Text(parts[selectedListIndex][index]
+          //                       .phones![0]
+          //                       .value
+          //                       .toString()
+          //                       .replaceAll(" ", "")
+          //                       .replaceFirst("+91", "")
+          //                       .replaceFirst("+", "")),
+          //                   // trailing: InkWell(
+          //                   //   onTap: () async {
+          //                   //     String sss = GlobalSingleton
+          //                   //         .contact[index].phones![0].value
+          //                   //         .toString()
+          //                   //         .replaceAll(" ", "")
+          //                   //         .replaceFirst("+", "");
+          //                   //     await Clipboard.setData(ClipboardData(text: sss));
+          //                   //   },
+          //                   //   child: const Icon(Icons.copy),
+          //                   // ),
+          //                 )
+          //               : const SizedBox();
+          //         }),
+          //   ),
         ],
       ),
     );

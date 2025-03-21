@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:auto_route/auto_route.dart';
-import 'package:contacts_service/contacts_service.dart';
+// import 'package:contacts_service/contacts_service.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:defenders/config/manager/global_singleton.dart';
@@ -165,15 +165,15 @@ class _SendMoneyScreenState extends State<SendMoneyScreen>
                           await _getContactPermission();
 
                       if (permissionStatus == PermissionStatus.granted) {
-                        final Contact? contact =
-                            await ContactsService.openDeviceContactPicker();
-                        if (contact != null) {
-                          _mobileController.text = contact.phones!.last.value!
-                              .replaceAll(" ", "")
-                              .replaceFirst("+91", "");
-                        } else {
-                          _handleInvalidPermissions(permissionStatus);
-                        }
+                        //  await final Contact? contact =
+                        // ContactsService.openDeviceContactPicker();
+                        // if (contact != null) {
+                        //   _mobileController.text = contact.phones!.last.value!
+                        //       .replaceAll(" ", "")
+                        //       .replaceFirst("+91", "");
+                        // } else {
+                        //   _handleInvalidPermissions(permissionStatus);
+                        // }
                       } else {
                         _handleInvalidPermissions(permissionStatus);
                       }

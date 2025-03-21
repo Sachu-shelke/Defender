@@ -63,6 +63,54 @@ class BasicPrimeTeamPresenter implements PrimeTeamPresenter {
         'active': "50",
         'inActive': "50",
       },
+       {
+        'level': "8",
+        'totalUser': "100",
+        'active': "50",
+        'inActive': "50",
+      },
+       {
+        'level': "9",
+        'totalUser': "100",
+        'active': "50",
+        'inActive': "50",
+      },
+       {
+        'level': "10",
+        'totalUser': "100",
+        'active': "50",
+        'inActive': "50",
+      },
+       {
+        'level': "11",
+        'totalUser': "100",
+        'active': "50",
+        'inActive': "50",
+      },
+       {
+        'level': "12",
+        'totalUser': "100",
+        'active': "50",
+        'inActive': "50",
+      },
+       {
+        'level': "13",
+        'totalUser': "100",
+        'active': "50",
+        'inActive': "50",
+      },
+       {
+        'level': "14",
+        'totalUser': "100",
+        'active': "50",
+        'inActive': "50",
+      },
+       {
+        'level': "15",
+        'totalUser': "100",
+        'active': "50",
+        'inActive': "50",
+      },
     ]);
   }
   @override

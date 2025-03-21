@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../main_home/widget/build_widget/build_widget.dart';
-import '../../main_home/widget/build_widget/listtile.dart';
+import '../main_home/widget/build_widget/build_widget.dart';
+import '../main_home/widget/build_widget/listtile.dart';
 class CheckPremission extends StatefulWidget {
   const CheckPremission({super.key});
 
@@ -13,7 +12,9 @@ class _CheckPremissionState extends State<CheckPremission> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text('Check the Required Permissions',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
         actions: [
           Icon(Icons.refresh),

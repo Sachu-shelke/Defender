@@ -20,7 +20,7 @@ class CallSmsScreen extends StatelessWidget {
         body: TabBarView(
           children: [
             // CallLogsScreen(),
-            SmsLogsScreen(),
+            // SmsLogsScreen(),
           ],
         ),
       ),

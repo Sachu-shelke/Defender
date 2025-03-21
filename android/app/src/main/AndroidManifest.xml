@@ -1,14 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-        package="com.defender.business">
-   <queries>
-        <package android:name="com.defender" /> 
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.defender.business">
+
+    <!-- Declaring queries for package and TTS service -->
+    <queries>
+        <package android:name="com.defender" />
     </queries>
-     <queries>
+    <queries>
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
         </intent>
-    </queries>  
+    </queries>
+
     <application
         android:label="Defender"
         android:name="${applicationName}"
@@ -20,14 +23,23 @@
         android:fullBackupContent="false"
         android:resizeableActivity="true"
         android:icon="@mipmap/ic_launcher">
-          <!-- <service android:name="flutter.overlay.window.flutter_overlay_window.OverlayService" android:exported="false" />
 
-        <service android:name="slayer.accessibility.service.flutter_accessibility_service.AccessibilityListener" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:exported="false">
+        <!-- Services are commented out. Uncomment them if needed -->
+        <!-- Overlay service for floating window -->
+        <!-- <service android:name="flutter.overlay.window.flutter_overlay_window.OverlayService" android:exported="false" /> -->
+
+        <!-- Accessibility service -->
+        <!--
+        <service android:name="slayer.accessibility.service.flutter_accessibility_service.AccessibilityListener"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
             <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibilityservice" />
-        </service> -->
+        </service>
+        -->
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -39,91 +51,106 @@
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
-            <!-- Specifies an Android theme to apply to this Activity as soon as
-                 the Android process has started. This theme is visible to the user
-                 while the Flutter UI initializes. After that, this theme continues
-                 to determine the Window background behind the Flutter UI. -->
-            <meta-data
-              android:name="io.flutter.embedding.android.NormalTheme"
-              android:resource="@style/NormalTheme"
-              />
-              <!-- <meta-data
-            android:name="android.allow_multiple_resumed_activities"
-            android:value="true" /> -->
-           
- <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@mipmap/ic_launcher" />
-            <meta-data
-                android:name="com.google.firebase.messaging.default_notification_channel_id"
-                android:value="notification_app"/>
 
+            <!-- Theme applied while Flutter UI initializes -->
+            <meta-data android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme" />
+
+            <!-- Firebase push notification settings -->
+            <meta-data android:name="com.google.firebase.messaging.default_notification_icon"
+                android:resource="@mipmap/ic_launcher" />
+            <meta-data android:name="com.google.firebase.messaging.default_notification_channel_id"
+                android:value="notification_app" />
+
+            <!-- Main launcher activity -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-             <intent-filter>
+
+            <!-- Intent filter for handling deep links (commented data tag for customization) -->
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-<!--                <data-->
-<!--                    android:scheme="https"-->
-<!--                    android:host="mirrorbusiness.page.link"/>-->
+                <!--
+                <data
+                    android:scheme="https"
+                    android:host="mirrorbusiness.page.link"/>
+                -->
             </intent-filter>
         </activity>
-        <!-- Don't delete the meta-data below.
-             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
-        <meta-data
-            android:name="flutterEmbedding"
-            android:value="2" />
-            <meta-data android:name="com.google.android.gms.version"
-          android:value="@integer/google_play_services_version" />
-              <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-1307516877764610~4385961742"/>
-            
-<meta-data android:name="com.phonepe.android.sdk.isUAT" android:value="false"/> 
-<meta-data android:name="com.phonepe.android.sdk.isSimulator" android:value="false"/>
-<meta-data android:name="com.phonepe.android.sdk.MerchantId" android:value="MIRRORINONLINE"/> 
-<!-- <meta-data android:name="com.phonepe.android.sdk.AppId" android:value="appId"/> -->
 
-        <meta-data 
-                android:name="com.truecaller.android.sdk.ClientId"
-                android:value="tvmcimrefktq50rhtabeyjqznusf_cis4l4irztywro" />
+        <!-- Meta-data for Flutter engine -->
+        <meta-data android:name="flutterEmbedding" android:value="2" />
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Google AdMob integration -->
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1307516877764610~4385961742"/>
+
+        <!-- PhonePe Payment SDK configuration -->
+        <meta-data android:name="com.phonepe.android.sdk.isUAT" android:value="false"/>
+        <meta-data android:name="com.phonepe.android.sdk.isSimulator" android:value="false"/>
+        <meta-data android:name="com.phonepe.android.sdk.MerchantId" android:value="MIRRORINONLINE"/>
+        <!-- <meta-data android:name="com.phonepe.android.sdk.AppId" android:value="appId"/> -->
+
+        <!-- Truecaller SDK -->
+        <meta-data android:name="com.truecaller.android.sdk.ClientId"
+            android:value="tvmcimrefktq50rhtabeyjqznusf_cis4l4irztywro" />
     </application>
+
+    <!-- Permissions Section -->
+    <!-- SMS & Call log permissions are commented out (Ensure Play Store compliance) -->
+    <!-- 
     <uses-permission android:name="android.permission.READ_CALL_LOG"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    -->
 
+    <!-- Camera & Audio -->
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <!-- Storage access -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- Location tracking -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- Overlay & Accessibility service -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>
+
+    <!-- Internet access -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Security & App monitoring -->
     <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
     <uses-permission android:name="android.permission.GET_TASKS"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS" />  
-    <uses-permission android:name="android.permission.WRITE_CONTACTS" />  
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" /> -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Contacts -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+    <!-- Device State & Notifications -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <!-- <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
-    <!-- <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <!-- <uses-permission android:name="android.permission.READ_CALL_LOG" />
-    <uses-permission android:name="android.permission.SEND_SMS" /> -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Audio & Media -->
     <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.VIDEO_CAPTURE" />
     <uses-permission android:name="android.permission.AUDIO_CAPTURE" />
+
+    <!-- Google Ads & Billing -->
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="com.android.vending.BILLING" />
+
 </manifest>

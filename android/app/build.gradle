@@ -29,7 +29,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace "com.defender.business"
-    compileSdkVersion 34
+    compileSdkVersion 35
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -48,7 +48,7 @@ android {
     defaultConfig {
         applicationId "com.defender.business"
         minSdkVersion 24
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
@@ -76,21 +76,17 @@ android {
 flutter {
     source '../..'
 }
-
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.zxing:core:3.5.1'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
 
-    // Uncomment and add other dependencies as necessary
-    // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation 'com.android.billingclient:billing:6.0.1'
+
+    // Firebase aur ads ke liye agar required ho toh uncomment karo
     // implementation platform('com.google.firebase:firebase-bom:32.7.3')
     // implementation 'com.google.firebase:firebase-analytics-ktx'
     // implementation 'com.google.firebase:firebase-messaging-ktx'
     // implementation 'com.google.android.gms:play-services-ads:23.0.0'
-    // implementation fileTree(dir: 'libs', include: ['*.jar'])
-    // implementation "androidx.core:core:1.12.0"
-    // implementation "androidx.appcompat:appcompat:1.6.1"
-    // implementation "androidx.lifecycle:lifecycle-process:2.7.0"
-    // implementation 'androidx.multidex:multidex:2.0.1'
 }
+

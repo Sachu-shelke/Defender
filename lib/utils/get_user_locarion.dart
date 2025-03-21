@@ -1,6 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:contacts_service/contacts_service.dart';
+// import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:defenders/config/manager/global_singleton.dart';
@@ -91,32 +91,32 @@ class UserContact {
       await Permission.contacts.request();
     }
 
-    if (GlobalSingleton.contact.isNotEmpty) {
+    // if (GlobalSingleton.contact.isNotEmpty) {
       if (context != null) circle.hide(context);
       return "SUCCESS";
     }
-    final bool hasPermission =
-        await handleLocationPermission(afterSuccess, dontDo: dontDo);
-
-    if (!hasPermission) {
-      if (context != null) circle.hide(context);
-      return "FAILED";
-    }
-
-    try {
-      final PermissionStatus permission = await Permission.contacts.status;
-      if (permission == PermissionStatus.granted) {
-        List<Contact> getContact = await ContactsService.getContacts();
-        GlobalSingleton.contact = getContact;
-        if (context != null) circle.hide(context);
-        return "SUCCESS";
-      } else {
-        return "FAILED";
-      }
-    } on Position catch (_) {
-      if (context != null) circle.hide(context);
-      return "FAILED";
-    }
+    // final bool hasPermission =
+    //     await handleLocationPermission(afterSuccess, dontDo: dontDo);
+    //
+    // if (!hasPermission) {
+    //   if (context != null) circle.hide(context);
+    //   return "FAILED";
+    // }
+    //
+    // try {
+    //   final PermissionStatus permission = await Permission.contacts.status;
+    //   if (permission == PermissionStatus.granted) {
+    //     List<Contact> getContact = await ContactsService.getContacts();
+    //     GlobalSingleton.contact = getContact;
+    //     if (context != null) circle.hide(context);
+    //     return "SUCCESS";
+    //   } else {
+    //     return "FAILED";
+    //   }
+    // } on Position catch (_) {
+    //   if (context != null) circle.hide(context);
+    //   return "FAILED";
+    // }
   }
 
   Future<bool> handleLocationPermission(Function()? afterSuccess,
@@ -138,4 +138,4 @@ class UserContact {
 
     return true;
   }
-}
+// }

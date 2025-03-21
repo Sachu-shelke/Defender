@@ -22,6 +22,7 @@ class AppAssets {
   static const String prime1499 = "assets/images/prime_1499.png";
   static const String prime2360 = "assets/images/prime_2390.png";
   static const String mirrorLoader = "assets/animation/Mirror_Loder.gif";
+  static const String nodata = "assets/animation/no-data.gif";
   static const String mobileBanking = "assets/icons/mobile-banking.png";
   static const String scratchCard = "assets/images/scratch_card.png";
   static const String referAFriend = "assets/images/refer-a-friend.png";

@@ -28,7 +28,8 @@ class HomeScreenModel {
   num totalEarning;
   String tabelName;
   HomeScreenModel(
-      {required this.graphicsList,
+      {
+        required this.graphicsList,
       required this.leadsList,
       required this.tabindex,
       required this.todayIncome,

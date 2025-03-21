@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+// import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:defenders/config/theme/app_colors.dart';
 import 'package:defenders/config/theme/app_text_style.dart';
 import 'package:defenders/constants/app_const_assets.dart';
@@ -331,8 +331,8 @@ class _TeamPortfolioScreenState extends State<TeamPortfolioScreen> {
           child: Image.asset(AppAssets.phoneIcon),
           onPressed: () async {
             if (widget.userInfo.mobile != null) {
-              await FlutterPhoneDirectCaller.callNumber(
-                  widget.userInfo.mobile.toString());
+              // await FlutterPhoneDirectCaller.callNumber(
+              //     widget.userInfo.mobile.toString());
             }
           },
         ),

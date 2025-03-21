@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'package:http/http.dart' as http;
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:usage_stats/usage_stats.dart';
+// import 'package:usage_stats/usage_stats.dart';
 
 const String serverUrl = 'https://yourserver.com';
 

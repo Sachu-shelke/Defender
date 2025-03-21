@@ -1,0 +1,2 @@
+C:/Users/Sachin/StudioProjects/defender/MirrorBusiness-3.0-main 2/android/app/.cxx/RelWithDebInfo/t62115r1/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/Sachin/StudioProjects/defender/MirrorBusiness-3.0-main 2/android/app/.cxx/RelWithDebInfo/t62115r1/armeabi-v7a/CMakeFiles/rebuild_cache.dir

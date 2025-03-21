@@ -5,7 +5,7 @@ import 'dart:math';
 // import 'package:call_log/call_log.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+// import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:defenders/config/manager/global_singleton.dart';
 import 'package:defenders/config/manager/storage_manager.dart';
 import 'package:defenders/config/theme/app_colors.dart';
@@ -588,9 +588,9 @@ class _TodayFollowUpScreenState extends State<TodayFollowUpScreen>
                               // getTimeFunction();
                               _incrementDailyCount();
                               CommonMethod().getUserLog(action: 'Call', id: 4);
-                              await FlutterPhoneDirectCaller.callNumber(model
-                                  .teamDetailsdata[index].mobile
-                                  .toString());
+                              // await FlutterPhoneDirectCaller.callNumber(model
+                              //     .teamDetailsdata[index].mobile
+                              //     .toString());
                             }
                             setState(() {});
                           },

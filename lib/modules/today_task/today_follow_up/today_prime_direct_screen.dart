@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+// import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:defenders/config/manager/global_singleton.dart';
 import 'package:defenders/config/theme/app_colors.dart';
 import 'package:defenders/constants/app_const_assets.dart';
@@ -149,8 +149,8 @@ class _TodayPrimeDirectScreenState extends State<TodayPrimeDirectScreen> {
                           if (modelList[index].mobile != null) {
                             // getTimeFunction();
                             // CommonMethod().getUserLog(action: 'Call', id: 4);
-                            await FlutterPhoneDirectCaller.callNumber(
-                                modelList[index].mobile.toString());
+                            // await FlutterPhoneDirectCaller.callNumber(
+                            //     modelList[index].mobile.toString());
 
                             // await FlutterPhoneDirectCaller.callNumber(
                             //     modelList[index].mobile.toString());

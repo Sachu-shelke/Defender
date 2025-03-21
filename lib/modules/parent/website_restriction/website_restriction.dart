@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../main_home/widget/build_widget/build_widget.dart';
-import '../../main_home/widget/build_widget/listtile.dart';
+import '../main_home/widget/build_widget/listtile.dart';
 
 class WebsiteRestriction extends StatefulWidget {
   const WebsiteRestriction({super.key});

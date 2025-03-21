@@ -5,7 +5,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+// import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:intl/intl.dart';
 import 'package:defenders/config/theme/app_colors.dart';
 import 'package:defenders/config/theme/app_text_style.dart';
@@ -685,13 +685,13 @@ class _HoldIncomePassbookScreenState extends State<HoldIncomePassbookScreen>
                                           ),
                                           InkWell(
                                             onTap: () async {
-                                              await FlutterPhoneDirectCaller
-                                                  .callNumber(model
-                                                      .incomeList![index]
-                                                      .senderMobile
-                                                      .toString());
-                                              model.incomeList![index]
-                                                  .isDropdown = false;
+                                              // await FlutterPhoneDirectCaller
+                                              //     .callNumber(model
+                                              //         .incomeList![index]
+                                              //         .senderMobile
+                                              //         .toString());
+                                              // model.incomeList![index]
+                                              //     .isDropdown = false;
                                               setState(() {});
                                             },
                                             child: Container(

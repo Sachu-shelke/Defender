@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:contacts_service/contacts_service.dart';
+// import 'package:contacts_service/contacts_service.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:defenders/model/auth_model/login_model.dart';
 import 'package:defenders/model/banner_model/banner_model.dart';
@@ -19,7 +19,7 @@ class GlobalSingleton {
   static LoginModel? loginInfo;
   static Position? currentPosition;
   static bool? fromSplash;
-  static List<Contact> contact = [];
+  // static List<Contact> contact = [];
   static double walletBalance = 0;
   static double cashbackWallet = 0;
   static String isPortfolioShoe = "0";

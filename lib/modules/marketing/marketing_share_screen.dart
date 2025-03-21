@@ -17,7 +17,7 @@ import 'package:defenders/widget/appbars/custom_app_bar.dart';
 import 'package:defenders/widget/textfields/default_text_field.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+// import 'package:image_gallery_saver/image_gallery_saver.dart';
 
 class GraphicsShareScreen extends StatefulWidget {
   final String categoriesName;
@@ -95,7 +95,7 @@ class _GraphicsShareScreenState extends State<GraphicsShareScreen> {
       final ByteData? byteData =
           await image.toByteData(format: ui.ImageByteFormat.png);
       final Uint8List pngBytes = byteData!.buffer.asUint8List();
-      await ImageGallerySaver.saveImage(pngBytes);
+      // await ImageGallerySaver.saveImage(pngBytes);
       //        await Share.shareFiles([imagePath.path]);
       Fluttertoast.showToast(msg: 'Image Download');
       // await ImageGallerySaver.saveImage(pngBytes);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
+// import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class ChildDeviceBindingScreen extends StatefulWidget {
   @override
@@ -8,13 +8,13 @@ class ChildDeviceBindingScreen extends StatefulWidget {
 
 class _ChildDeviceBindingScreenState extends State<ChildDeviceBindingScreen> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-  QRViewController? controller;
+  // QRViewController? controller;
   String qrText = "Scan the QR code from the parent's device";
   TextEditingController bindingCodeController = TextEditingController();
 
   @override
   void dispose() {
-    controller?.dispose();
+    // controller?.dispose();
     super.dispose();
   }
 
@@ -29,13 +29,13 @@ class _ChildDeviceBindingScreenState extends State<ChildDeviceBindingScreen> {
         padding: EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Expanded(
-              flex: 4,
-              child: QRView(
-                key: qrKey,
-                onQRViewCreated: _onQRViewCreated,
-              ),
-            ),
+            // Expanded(
+            //   flex: 4,
+            //   child: QRView(
+            //     key: qrKey,
+            //     onQRViewCreated: _onQRViewCreated,
+            //   ),
+            // ),
             SizedBox(height: 20),
             Text(
               qrText,
@@ -68,13 +68,13 @@ class _ChildDeviceBindingScreenState extends State<ChildDeviceBindingScreen> {
     );
   }
 
-  void _onQRViewCreated(QRViewController controller) {
-    this.controller = controller;
-    controller.scannedDataStream.listen((scanData) {
-      setState(() {
-        qrText = scanData.code!;
-        // You can add logic to verify QR data here
-      });
-    });
-  }
+  // void _onQRViewCreated(QRViewController controller) {
+  //   this.controller = controller;
+  //   controller.scannedDataStream.listen((scanData) {
+  //     setState(() {
+  //       qrText = scanData.code!;
+  //       // You can add logic to verify QR data here
+  //     });
+  //   });
+  // }
 }
